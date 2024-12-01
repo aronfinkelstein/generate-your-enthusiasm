@@ -12,12 +12,11 @@ The overall aim for this project is to train a model to predict curb your enthus
 
 ### Data Preprocessing and Labelling
 
-- [ ] Clean text data (e.g., removing HTML tags, special characters, etc.).
-- [ ] Tokenize and normalize the text (e.g., lowercasing, stemming/lemmatization).
-- [ ] Extract relevant sections (e.g., separating dialogue and descriptions).
+- [ ] Clean text data
+- [ ] Tokenize and normalize the text
 
 - [ ] Split data into training, validation, and test sets.
-- [ ] Develop a schema for manual labelling (e.g., identify key plot elements like conflicts, resolutions, comedic beats).
+- [ ] Develop a schema for manual labelling based on the spacy labelling schema
 - [ ] Manually label a subset of training data.
 - [ ] Create a set of heuristics or weak supervision rules to auto-label the rest of the data.
 - [ ] Refine the labelling process iteratively to improve accuracy.
