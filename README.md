@@ -8,8 +8,22 @@ Anyway, I think it was Einstein or someone equally important, that wrote 'Larry 
 
 If only Mr. David would just reveal his secrets...
 
-## Data Collection
+## Table of Contents
+
+1. [Description](#generate-your-enthusiasm)
+2. [Installation](#installation)
+3. [How I Built This](#how-i-built-this)
+4. [Features](#features)
+5. [Development Process](#development-process)
+6. [Roadmap](#roadmap)
+7. [Contact Information](#contact-information)
+
+## How I Built This
+
+### Data Collection
 
 In order to train the model, I considered various data types. Curb is an improvised show and therefore, scripts aren't actually available. I could have used transcripts or subtitles, but I couldn't find a source that had labelled scripts, just the transcription of speech. Instead, I decided to use the imdb and wikipedia synopsis for each episode as training data.
 
-## Training an NER model
+### Training an NER model
+
+I decided to use the spaCy "en_core_web_sm" as a base model for this project, and worked on training the model to automatically label the synopses for later use. I split the data into different sets and cleaned it of unicode and html elements. I decided to manually label randomly selected sections of 20 synopses. I did this using label studio, and used the spaCy schema. There were a few decisions to be made, and the regualar definitions of people and products had to be slughtly altered to account for inside jokes and specific references within the show. For example the Shucker would usually not be labelled as a PERSON by spaCy, but for this project, it needed to be, he plays an important role.

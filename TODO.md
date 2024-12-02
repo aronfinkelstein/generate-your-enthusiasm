@@ -12,7 +12,7 @@ The overall aim for this project is to train a model to predict curb your enthus
 
 ### Data Preprocessing and Labelling
 
-- [ ] Clean text data
+- [x] Clean text data
 - [ ] Tokenize and normalize the text
 
 - [ ] Split data into training, validation, and test sets.
