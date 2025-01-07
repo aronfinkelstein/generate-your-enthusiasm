@@ -1,0 +1,53 @@
+{
+  "cameo_char": [
+    "Barack Obama",
+    "Madonna",
+    "Albert Einstein",
+    "David Attenborough",
+    "Lionel Messi",
+    "Tony Blair",
+    "Bill Gates",
+    "Charli xcx",
+    "Beyonce",
+    "Kim Jong Un",
+    "James Blunt",
+    "Sean Dyche",
+    "Mick Jagger",
+    "Rod Stewart",
+    "Jesus Christ"
+  ],
+  "new_loc": [
+    "Japan",
+    "Brazil",
+    "Empire State Building",
+    "Watford Gap Service Station",
+    "Syndey Opera House",
+    "Stamford Bridge",
+    "Houses of Parliament",
+    "Ice cream parlour",
+    "Theme park",
+    "Egypt",
+    "North Korea",
+    "Sheffield",
+    "Bristol University",
+    "Morocco",
+    "North Pole"
+  ],
+  "new_event": [
+    "Hot Dog Eating Competition",
+    "Darts World Final",
+    "Court Case",
+    "Black Friday Sales",
+    "James Blunt Concert",
+    "Millwall vs Luton Football Match",
+    "Oil Spill",
+    "London Marathon",
+    "Olympics 100 Meter Final",
+    "Chinese New Year",
+    "Passover",
+    "Shrek 5 Premier",
+    "World Cup Final",
+    "Bull Run",
+    "University Challenge Final"
+  ]
+}

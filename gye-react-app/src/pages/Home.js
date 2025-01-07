@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import randomEntries from "../randomEntries.json";
 
 function Home() {
   const [inputs, setInputs] = useState({
@@ -39,8 +40,18 @@ function Home() {
     }
   };
 
+  const randomize = () => {
+    const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+    setInputs({
+      variable1: getRandomItem(randomEntries.cameo_char),
+      variable2: getRandomItem(randomEntries.new_loc),
+      variable3: getRandomItem(randomEntries.new_event),
+    });
+  };
+
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8 min-h-screen">
       <div className="max-w-2xl mx-auto rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-bold mb-6 text-yellow-400 tracking-tighter font-sans">
           Larry David is completely out of ideas and needs some help with new
@@ -60,32 +71,44 @@ function Home() {
               <input
                 type="text"
                 value={inputs[key]}
-                onChange={(e) => (prev) => ({ ...prev, [key]: e.target.value })}
+                onChange={(e) =>
+                  setInputs((prev) => ({ ...prev, [key]: e.target.value }))
+                }
                 className="w-full font-mono p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
               />
             </div>
           ))}
 
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full bg-blue-600 font-sans text-white py-2 px-4 rounded-md hover:bg-blue-700 disabled:bg-blue-400 relative"
-          >
-            {isLoading ? (
-              <div className="flex items-center justify-center">
-                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                Generating Plot...
-              </div>
-            ) : (
-              "Generate Plot"
-            )}
-          </button>
+          <div className="flex gap-4">
+            <button
+              type="button"
+              onClick={randomize}
+              className="flex-1 bg-green-600 font-sans text-white py-2 px-4 rounded-md hover:bg-green-700 disabled:bg-green-400"
+            >
+              Randomize
+            </button>
+
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="flex-1 bg-yellow-400 font-sans text-black py-2 px-4 rounded-md hover:bg-blue-700 disabled:bg-blue-400 relative"
+            >
+              {isLoading ? (
+                <div className="flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white  mr-2"></div>
+                  Generating Plot...
+                </div>
+              ) : (
+                "Generate Plot"
+              )}
+            </button>
+          </div>
         </form>
 
         {isLoading && (
-          <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <div className="mt-6 p-4 bg-yellow-400 rounded-md">
             <div className="flex items-center justify-center space-x-2">
-              <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+              <div className="animate-spin rounded-full h-6 w-6 border-b-2 yellow-400 border-blue-600"></div>
               <span className="text-gray-600">Generating your plot...</span>
             </div>
           </div>
