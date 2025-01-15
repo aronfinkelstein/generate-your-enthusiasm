@@ -2,6 +2,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from chatbot import template, chain  # Import from your existing chatbot.py
+from fastapi.responses import JSONResponse
+import traceback
 
 app = FastAPI()
 
@@ -31,7 +33,12 @@ async def generate_plot(request: PlotRequest):
         result = chain.invoke(variables)
         return {"plot": result}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        error_details = traceback.format_exc()
+        print(f"Error: {e}\n{error_details}")  # Log full traceback
+        return JSONResponse(
+            status_code=500,
+            content={"message": "Internal Server Error", "error": str(e)}
+        )
 
 if __name__ == "__main__":
     import uvicorn

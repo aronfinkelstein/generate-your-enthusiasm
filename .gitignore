@@ -1,2 +1,15 @@
+# Ignore Node.js dependencies
+node_modules/
+gye-react-app/node_modules/
+
+# Ignore Python virtual environment
 genvenv/
+
+# Ignore system files
+__pycache__/
+*.pyc
+*.pyo
+*.DS_Store
+
+# Ignore model files
 backend/models/
